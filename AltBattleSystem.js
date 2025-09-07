@@ -14,4 +14,19 @@
  *
  * It does not provide plugin commands.
  */
-(() => {})();
+(() => {
+  Sprite_Actor.prototype.setActorHome = function (index) {
+    this.setHome(400 + index * 32, 480 + index * 48);
+  };
+  Sprite_Actor.prototype.moveToStartPosition = function () {
+    this.startMove(0, 50, 0);
+  };
+
+  Scene_Battle.prototype.actorCommandWindowRect = function () {
+    const ww = Graphics.boxWidth;
+    const wh = this.windowAreaHeight();
+    const wx = this.isRightInputMode() ? Graphics.boxWidth - ww : 0;
+    const wy = Graphics.boxHeight - wh;
+    return new Rectangle(wx, wy, ww, wh);
+  };
+})();
