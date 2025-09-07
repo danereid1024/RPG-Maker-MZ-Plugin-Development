@@ -22,6 +22,19 @@
     this.startMove(0, 50, 0);
   };
 
+  Window_BattleStatus.prototype.drawItemImage = function (index) {
+    const actor = this.actor(index);
+    const rect = this.faceRect(index);
+  };
+
+  Scene_Battle.prototype.partyCommandWindowRect = function () {
+    const ww = Graphics.boxWidth;
+    const wh = this.windowAreaHeight();
+    const wx = this.isRightInputMode() ? Graphics.boxWidth - ww : 0;
+    const wy = Graphics.boxHeight - wh;
+    return new Rectangle(wx, wy, ww, wh);
+  };
+
   Scene_Battle.prototype.actorCommandWindowRect = function () {
     const ww = Graphics.boxWidth;
     const wh = this.windowAreaHeight();
