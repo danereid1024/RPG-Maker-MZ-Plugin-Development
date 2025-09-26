@@ -12,7 +12,7 @@
  * This plugin changes the layout of sprites during battle.
  * It places the battlers and enemy battlers vertically to each other.
  *
- * It does not provide plugin commands.
+ * It does not provide plugin commands. Test
  */
 (() => {
   Sprite_Actor.prototype.setActorHome = function (index) {
